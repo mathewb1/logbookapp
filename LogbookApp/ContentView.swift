@@ -18,10 +18,10 @@ struct ContentView: View {
         NavigationSplitView {
             VStack {
                 // New Title Section
-                Text("LogBook App")
+                Text("Flight LogBook")
                     .font(.largeTitle)
                     .padding()
-                Text("Test Update from Xcode")
+                Text("Pilot's Data Saved")
                     .font(.subheadline)
                     .padding(.bottom)
                 

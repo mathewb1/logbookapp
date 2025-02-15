@@ -1,0 +1,11 @@
+# Logbook App
+
+A simple logbook application for tracking entries.
+
+## Test Code
+This repository currently contains test code to verify GitHub-Xcode integration.
+
+### Features
+- Basic LogEntry structure
+- Date formatting
+- Entry summary generation

@@ -1,16 +1,13 @@
+simport Foundation
+
 struct LogEntry {
-    let date: Date
-    let title: String
-    let description: String
+    var date: Date
+    var title: String
+    var description: String
     
-    func getFormattedDate() -> String {
+    func formatDate() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter.string(from: date)
     }
-    
-    func getSummary() -> String {
-        return "[\(getFormattedDate())] \(title): \(description)"
-    }
 }
-//test222

@@ -1,4 +1,4 @@
-simport Foundation
+import Foundation
 
 struct LogEntry {
     var date: Date

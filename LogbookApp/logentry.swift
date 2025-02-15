@@ -13,3 +13,4 @@ struct LogEntry {
         return "[\(getFormattedDate())] \(title): \(description)"
     }
 }
+//test

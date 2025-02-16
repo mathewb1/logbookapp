@@ -14,6 +14,7 @@ struct LogbookAppApp: App {
         let schema = Schema([
             Item.self,
             Pilot.self,
+            Aircraft.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

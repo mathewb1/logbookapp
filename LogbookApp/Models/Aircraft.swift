@@ -24,10 +24,12 @@ import SwiftData
 
 @Model
 final class Aircraft {
+    @Attribute(.unique) var id: UUID
     var make: String
     var registration: String
 
     init(make: String, registration: String) {
+        self.id = UUID()
         self.make = make
         self.registration = registration
     }

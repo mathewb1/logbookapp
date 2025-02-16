@@ -26,33 +26,13 @@ The complete file content is as follows:
 import Foundation
 import SwiftData
 
-enum EngineType: String, Codable, Hashable, CaseIterable {
-    case SEP = "Single Engine Piston"
-    case MEP = "Multi Engine Piston"
-}
-
 @Model
 final class Aircraft {
     var make: String
-    var model: String
-    var code: String
     var registration: String
-    var engineType: EngineType
-    var photo: Data?
 
-    init(
-        make: String,
-        model: String,
-        code: String,
-        registration: String,
-        engineType: EngineType,
-        photo: Data? = nil
-    ) {
+    init(make: String, registration: String) {
         self.make = make
-        self.model = model
-        self.code = code
         self.registration = registration
-        self.engineType = engineType
-        self.photo = photo
     }
 }

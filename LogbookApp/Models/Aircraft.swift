@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 /// Enum representing the engine type of an aircraft.
-enum EngineType: String, Codable, Hashable {
+enum EngineType: String, Codable, Hashable, CaseIterable {
     case SEP = "Single Engine Piston"
     case MEP = "Multi Engine Piston"
 }
@@ -65,7 +65,7 @@ import Foundation
 import SwiftData
 
 /// Enum representing the engine type of an aircraft.
-enum EngineType: String, Codable, Hashable {
+enum EngineType: String, Codable, Hashable, CaseIterable {
     case SEP = "Single Engine Piston"
     case MEP = "Multi Engine Piston"
 }

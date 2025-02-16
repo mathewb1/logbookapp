@@ -43,26 +43,16 @@ final class Aircraft {
 The complete file content is as follows:
 
 ```
-//
-//  Aircraft.swift
-//  LogbookApp
-//
-//  Created by Mathew Bellamy on 15/02/2025.
-//
-
 import Foundation
 import SwiftData
 
-/// Enum representing the engine type of an aircraft.
 enum EngineType: String, Codable, Hashable, CaseIterable {
     case SEP = "Single Engine Piston"
     case MEP = "Multi Engine Piston"
 }
 
-/// Model representing an aircraft record.
 @Model
 final class Aircraft {
-    // MARK: - Properties
     var make: String
     var model: String
     var code: String
@@ -70,7 +60,6 @@ final class Aircraft {
     var engineType: EngineType
     var photo: Data?
 
-    // MARK: - Initializer
     init(
         make: String,
         model: String,

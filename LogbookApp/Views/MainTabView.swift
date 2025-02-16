@@ -3,16 +3,7 @@ import SwiftData
 
 struct MainTabView: View {
     var body: some View {
-        VStack {
-            // App Logo at the top
-            Image("AppIcon") // Ensure "AppIcon" matches the asset name in Assets.xcassets
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-                .padding(.top, 20)
-
-            // TabView for navigation
-            TabView {
+        TabView {
                 // Logbook Tab
                 LogbookView()
                     .tabItem {
@@ -55,8 +46,6 @@ struct MainTabView: View {
                         Label("Filter", systemImage: "line.horizontal.3.decrease.circle")
                     }
             }
-            .padding(.top, 10) // Add some spacing between the logo and the TabView
-        }
     }
 }
 

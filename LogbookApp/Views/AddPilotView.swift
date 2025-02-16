@@ -24,6 +24,7 @@ struct AddPilotView: View {
     @State private var medicalValidFrom: Date = Date()
     @State private var medicalValidTo: Date = Date()
     @State private var signature: Data? = nil
+    @State private var showSignatureSheet: Bool = false
     
     @State private var showValidationError: Bool = false
     
@@ -71,11 +72,35 @@ struct AddPilotView: View {
                     
                     DatePicker("Medical Valid To", selection: $medicalValidTo, displayedComponents: .date)
                     
-                    Button(action: {
-                        // Simulate adding a signature (e.g., from a drawing pad)
-                        signature = Data("SampleSignature".utf8)
-                    }) {
-                        Text("Add Signature")
+                    if let signature = signature, let uiImage = UIImage(data: signature) {
+                        VStack {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 100)
+                                .cornerRadius(10)
+                                .padding(.bottom, 8)
+                            
+                            HStack {
+                                Button("Clear Signature") {
+                                    self.signature = nil
+                                }
+                                .foregroundColor(.red)
+                                
+                                Spacer()
+                                
+                                Button("Replace Signature") {
+                                    showSignatureSheet = true
+                                }
+                                .foregroundColor(.blue)
+                            }
+                        }
+                    } else {
+                        Button(action: {
+                            showSignatureSheet = true
+                        }) {
+                            Text("Add Signature")
+                        }
                     }
                 }
             }
@@ -97,6 +122,9 @@ struct AddPilotView: View {
             } message: {
                 Text("Name is required.")
             }
+        }
+        .sheet(isPresented: $showSignatureSheet) {
+            SignatureCaptureView(signatureData: $signature)
         }
         .onAppear {
             if let pilot = pilot {

@@ -15,41 +15,7 @@ struct ContentView: View {
     @State private var logEntries: [LogEntry] = []
 
     var body: some View {
-        NavigationSplitView {
-            VStack {
-                // New Title Section
-                Text("Flight LogBook")
-                    .font(.largeTitle)
-                    .padding()
-                Text("Pilot's Data Saved")
-                    .font(.subheadline)
-                    .padding(.bottom)
-                
-                // Existing List View
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                        } label: {
-                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
+        MainTabView()
     }
 
     private func addItem() {

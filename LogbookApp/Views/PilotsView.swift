@@ -9,8 +9,9 @@ struct PilotsView: View {
     @State private var selectedPilot: Pilot?
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
+                .listStyle(.plain)
                 ForEach(pilots) { pilot in
                     Text(pilot.name)
                         .onTapGesture {

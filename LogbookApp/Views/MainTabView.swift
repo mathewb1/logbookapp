@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct MainTabView: View {
     var body: some View {
@@ -13,43 +14,43 @@ struct MainTabView: View {
             // TabView for navigation
             TabView {
                 // Logbook Tab
-                Text("Logbook View")
+                LogbookView()
                     .tabItem {
                         Label("Logbook", systemImage: "book")
                     }
 
                 // Flight Totals Tab
-                Text("Flight Totals View")
+                FlightTotalsView()
                     .tabItem {
                         Label("Flight Totals", systemImage: "chart.bar")
                     }
 
                 // Aircrafts Tab
-                Text("Aircrafts View")
+                AircraftsView()
                     .tabItem {
                         Label("Aircrafts", systemImage: "airplane")
                     }
 
                 // Airfields Tab
-                Text("Airfields View")
+                AirfieldsView()
                     .tabItem {
                         Label("Airfields", systemImage: "map")
                     }
 
                 // Pilots Tab
-                Text("Pilots View")
+                PilotsView()
                     .tabItem {
                         Label("Pilots", systemImage: "person.2")
                     }
 
                 // Print Tab
-                Text("Print View")
+                PrintView()
                     .tabItem {
                         Label("Print", systemImage: "printer")
                     }
 
                 // Filter Tab
-                Text("Filter View")
+                FilterView()
                     .tabItem {
                         Label("Filter", systemImage: "line.horizontal.3.decrease.circle")
                     }

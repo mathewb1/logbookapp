@@ -1,2 +1,2 @@
-        .fullScreenCover(isPresented: $showSignatureSheet) {
+.fullScreenCover(isPresented: $showSignatureSheet) {
         }

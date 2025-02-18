@@ -14,9 +14,11 @@ struct LogbookAppApp: App {
     
     init() {
         do {
-            container = try ModelContainer(for: Aircraft.self)
+            let schema = Schema([Aircraft.self, Record.self, Item.self])
+            let modelConfiguration = ModelConfiguration(schema: schema)
+            container = try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
-            fatalError("Could not initialize ModelContainer")
+            fatalError("Could not initialize ModelContainer: \(error)")
         }
     }
     

@@ -13,7 +13,7 @@ struct ContentView: View {
                     Label("Flight Totals", systemImage: "airplane")
                 }
             
-            Text("Aircraft View")
+            AircraftView()
                 .tabItem {
                     Label("Aircraft", systemImage: "airplane.circle")
                 }

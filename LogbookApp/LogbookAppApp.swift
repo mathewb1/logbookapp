@@ -12,7 +12,7 @@ import SwiftData
 struct LogbookAppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            LogEntry.self,
             Pilot.self,
             Aircraft.self,
         ])

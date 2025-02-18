@@ -13,6 +13,7 @@ enum EngineType: String, Codable, CaseIterable {
 final class Aircraft {
     @Attribute(.unique) var id: UUID
     var make: String
+    var model: String
     var registration: String
     var engineType: EngineType
     var photo: Data?
